@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { useState } from "react";
-import logo from '../assets/logo2.png'
+import logo from '../assets/logo.png'
 import './NavBar.css'
 
 const NavBar = () => {
@@ -9,20 +9,20 @@ const NavBar = () => {
 
     return (
 
-        <div className="bg-[#262626]">
+        <div className="bg-white">
             <div className="flex justify-between py-6 items-center max-w-7xl mx-auto">
                 <div className="flex items-center font-bold text-lg">
                     <img src={logo} className="w-32" alt="logo of the website" />
                 </div>
                 <div className="">
-                    <div className="lg:hidden text-2xl mr-8 mt-5 text-white" onClick={() => setOpen(!open)}>
+                    <div className="lg:hidden text-2xl mr-8 mt-5" onClick={() => setOpen(!open)}>
                         {
                             open === true ? <AiOutlineClose></AiOutlineClose> : <AiOutlineMenu></AiOutlineMenu>
                         }
                     </div>
                     <nav className={`absolute bg-white z-50 lg:bg-transparent lg:block lg:static px-5 ${open ? 'right-1' : '-right-72'} ${open ? 'block' : 'hidden'}`}>
                         <div className="flex flex-col md:flex-row gap-5 py-3 items-center">
-                            <ul className={`flex flex-col md:flex-row gap-5 lg:text-white`}>
+                            <ul className={`flex flex-col md:flex-row gap-5`}>
                                 <li>
                                     <NavLink to="/">Home</NavLink>
                                 </li>
@@ -65,7 +65,7 @@ const NavBar = () => {
                                     <div className="mb-5 md:mb-0">
                                         <Link to="/login">
                                             <button
-                                                className="border border-[#f6425f] text-white px-5 py-2 rounded-md"
+                                                className="border border-[#f6425f] px-5 py-2 rounded-md hover:bg-[#f6425f] hover:text-white"
                                                 type="button"
                                                 data-ripple-light="true"
                                             >
@@ -74,7 +74,7 @@ const NavBar = () => {
                                         </Link>
                                         <Link to="/registration">
                                             <button
-                                                className="bg-[#f6425f] text-white px-5 py-2 rounded-md ml-3"
+                                                className="bg-[#f6425f] text-white px-5 py-2 rounded-md ml-3 hover:border hover:border-[#f6425f] hover:bg-white hover:text-black"
                                                 type="button"
                                                 data-ripple-light="true"
                                             >
