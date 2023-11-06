@@ -46,7 +46,7 @@ const AllBook = () => {
                   <p>
                     <Ratings rating={book.rating}></Ratings>
                   </p>
-                  <Link to={"/update-book"}>
+                  <Link to={`/update-book/${book._id}`}>
                     <button className="bg-[#f6425f] text-white px-5 py-2 rounded-md">
                       Update book
                     </button>

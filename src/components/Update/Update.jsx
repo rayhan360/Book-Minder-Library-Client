@@ -1,8 +1,14 @@
 import Title from "../Shared/Title";
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
+import axios from 'axios';
+import Swal from "sweetalert2";
 
 const Update = () => {
+  const books = useLoaderData();
+  const { _id, image, name, quantity, author, category, rating, description } =
+    books;
   const {
     register,
     handleSubmit,
@@ -10,9 +16,20 @@ const Update = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
 
-   
+    // update books
+    axios.put(`http://localhost:3000/api/v1/books/${_id}`, data)
+    .then(res => {
+        console.log(res.data);
+        if (res.data.modifiedCount > 0) {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Book Updated Successfully',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        }
+    })
   };
   return (
     <div>
@@ -44,6 +61,7 @@ const Update = () => {
                   className="appearance-none block w-full bg-gray-100 text-gray-800 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   type="text"
                   placeholder="Books Name"
+                  defaultValue={name}
                 />
                 {errors.name && <p>This field is required</p>}
               </div>
@@ -52,10 +70,7 @@ const Update = () => {
                   {...register("category", { required: true })}
                   className="select select-bordered w-full max-w-xs bg-gray-100"
                 >
-                  <option value="Novel">Novel</option>
-                  <option value="History">History</option>
-                  <option value="Sci-Fi">Sci-Fi</option>
-                  <option value="Drama">Drama</option>
+                  <option value={`${category}`}>{category}</option>
                 </select>
                 {errors.category && <p>This field is required</p>}
               </div>
@@ -67,6 +82,7 @@ const Update = () => {
                   className="appearance-none block w-full bg-gray-100 text-gray-800 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   type="text"
                   placeholder="Book Image"
+                  defaultValue={image}
                 />
                 {errors.image && <p>This field is required</p>}
               </div>
@@ -74,8 +90,9 @@ const Update = () => {
                 <input
                   {...register("quantity", { required: true })}
                   className="appearance-none block w-full bg-gray-100 text-gray-800 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  type="number"
+                  type="text"
                   placeholder="Quantity of the books"
+                  defaultValue={quantity}
                 />
                 {errors.quantity && <p>This field is required</p>}
               </div>
@@ -87,6 +104,7 @@ const Update = () => {
                   className="appearance-none block w-full bg-gray-100 text-gray-800 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   type="text"
                   placeholder="Author Name"
+                  defaultValue={author}
                 />
                 {errors.author && <p>This field is required</p>}
               </div>
@@ -96,6 +114,7 @@ const Update = () => {
                   className="appearance-none block w-full bg-gray-100 text-gray-800 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   type="text"
                   placeholder="Rating of the books"
+                  defaultValue={rating}
                 />
                 {errors.rating && <p>This field is required</p>}
               </div>
@@ -109,6 +128,7 @@ const Update = () => {
               id=""
               cols="30"
               rows="10"
+              defaultValue={description}
             />
             {errors.description && <p>This field is required</p>}
             <input
