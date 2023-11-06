@@ -1,0 +1,146 @@
+[
+  {
+    "image": "https://i.ibb.co/yShFJ4K/getsby.jpg",
+    "name": "The Great Gatsby",
+    "quantity": 10,
+    "author": "F. Scott Fitzgerald",
+    "category": "Novel",
+    "rating": 4.5,
+    "description": "The Great Gatsby is a classic novel written by F. Scott Fitzgerald. It tells the story of Jay Gatsby, a wealthy and mysterious man, and his love for Daisy Buchanan, a married woman. Set in the roaring 1920s, the book explores themes of wealth, love, and the American Dream. Fitzgerald's beautiful prose and vivid characters make this novel a timeless masterpiece. With a rating of 4.5, it's a must-read for anyone looking for a glimpse into the extravagance and disillusionment of the Jazz Age."
+  },
+  {
+    "image": "https://i.ibb.co/RBJsBSQ/mockingbird.png",
+    "name": "To Kill a Mockingbird",
+    "quantity": 8,
+    "author": "Harper Lee",
+    "category": "Novel",
+    "rating": 4.3,
+    "description": "To Kill a Mockingbird, written by Harper Lee, is a poignant novel set in the American South during the 1930s. It follows the story of Scout Finch and her brother Jem as they witness racial injustice and moral growth in their community. Atticus Finch, their father, is a lawyer defending a black man accused of raping a white woman. The novel explores themes of racism, empathy, and the loss of innocence. With a rating of 4.7, it's a thought-provoking and heartwarming tale that continues to resonate with readers."
+  },
+  {
+    "image": "https://i.ibb.co/McPWVks/prejudice.png",
+    "name": "Pride and Prejudice",
+    "quantity": 6,
+    "author": "Jane Austen",
+    "category": "Novel",
+    "rating": 4.6,
+    "description": "Pride and Prejudice, authored by Jane Austen, is a beloved classic set in 19th-century England. The novel revolves around the spirited Elizabeth Bennet and her interactions with the enigmatic Mr. Darcy. It's a story of love, class, and societal norms. Austen's witty social commentary and character development make it a timeless favorite. With a rating of 4.8, it's a charming tale that explores the complexities of human relationships."
+  },
+  {
+    "image": "https://i.ibb.co/6mFXkk9/catcher.png",
+    "name": "The Catcher in the Rye",
+    "quantity": 9,
+    "author": "J.D. Salinger",
+    "category": "Novel",
+    "rating": 4.8,
+    "description": "The Catcher in the Rye, written by J.D. Salinger, is a coming-of-age novel narrated by the troubled teenager Holden Caulfield. The book delves into themes of alienation, identity, and the challenges of growing up. Holden's voice is unique, and the story is a reflection on the difficulties of transitioning to adulthood. With a rating of 4.3, it's a thought-provoking exploration of youth and disillusionment in the modern world."
+  },
+  {
+    "image": "https://i.ibb.co/xs61nKj/us.jpg",
+    "name": "A People's History of the United States",
+    "quantity": 7,
+    "author": "Howard Zinn",
+    "category": "History",
+    "rating": 4.1,
+    "description": "A People's History of the United States by Howard Zinn offers a different perspective on American history. Zinn tells the history of the United States from the viewpoints of marginalized groups, emphasizing the struggles and voices often overlooked in traditional history books. With a rating of 4.6, it's a compelling and eye-opening narrative that challenges mainstream historical accounts."
+  },
+  {
+    "image": "https://i.ibb.co/s3hPW2f/august.jpg",
+    "name": "The Guns of August",
+    "quantity": 5,
+    "author": "Barbara W. Tuchman",
+    "category": "History",
+    "rating": 3.5,
+    "description": "The Guns of August, penned by Barbara W. Tuchman, provides an in-depth account of the events leading up to World War I. The book meticulously examines the political, military, and social factors that contributed to the outbreak of the war. With a rating of 4.4, it's a well-researched and informative work for history enthusiasts."
+  },
+  {
+    "image": "https://i.ibb.co/QNBYgQB/brothers.jpg",
+    "name": "Band of Brothers",
+    "quantity": 6,
+    "author": "Stephen E. Ambrose",
+    "category": "History",
+    "rating": 4.5,
+    "description": "Band of Brothers by Stephen E. Ambrose is a gripping history of 'Easy' Company, a unit of the 506th Parachute Infantry Regiment during World War II. The book follows the experiences of these soldiers, from D-Day to the end of the war. With a rating of 4.7, it's a moving tribute to the bravery and camaraderie of those who served."
+  },
+  {
+    "image": "https://i.ibb.co/XWKBzzX/wright.jpg",
+    "name": "The Wright Brothers",
+    "quantity": 8,
+    "author": "David McCullough",
+    "category": "History",
+    "rating": 4.2,
+    "description": "The Wright Brothers, written by David McCullough, tells the fascinating story of Orville and Wilbur Wright, who achieved the first powered flight. The book explores their dedication, ingenuity, and the challenges they overcame. With a rating of 4.8, it's an inspiring biography of two pioneers who changed the course of history."
+  },
+  {
+    "image": "https://i.ibb.co/kJkMn1d/hamlet.jpg",
+    "name": "Hamlet",
+    "quantity": 12,
+    "author": "William Shakespeare",
+    "category": "Drama",
+    "rating": 4.8,
+    "description": "Hamlet, a timeless masterpiece by William Shakespeare, is a tragic play about the Prince of Denmark, Hamlet, who seeks revenge against his uncle Claudius. The play delves into themes of revenge, madness, and the complexities of the human psyche. With a rating of 4.9, it's a must-read for lovers of classical drama."
+  },
+  {
+    "image": "https://i.ibb.co/3N5trGB/romeo-and-juliet.jpg",
+    "name": "Romeo and Juliet",
+    "quantity": 10,
+    "author": "William Shakespeare",
+    "category": "Drama",
+    "rating": 4.8,
+    "description": "Romeo and Juliet, another iconic work by William Shakespeare, is a romantic tragedy that tells the story of two young lovers, Romeo and Juliet, from feuding families. Their love defies social boundaries and leads to a series of fateful events. With a rating of 4.8, it's a timeless tale of love and tragedy."
+  },
+  {
+    "image": "https://i.ibb.co/2qx4T3x/crucible.jpg",
+    "name": "The Crucible",
+    "quantity": 7,
+    "author": "Arthur Miller",
+    "category": "Drama",
+    "rating": 3.9,
+    "description": "The Crucible, authored by Arthur Miller, is a dramatization of the Salem witch trials in the 17th century. The play explores the consequences of mass hysteria, paranoia, and the persecution of alleged witches. With a rating of 4.5, it's a powerful and thought-provoking work."
+  },
+  {
+    "image": "https://i.ibb.co/RSjnppJ/salesman.jpg",
+    "name": "Death of a Salesman",
+    "quantity": 9,
+    "author": "Arthur Miller",
+    "category": "Drama",
+    "rating": 4.8,
+    "description": "Death of a Salesman, also written by Arthur Miller, examines the life and failures of a salesman named Willy Loman. The play offers a critical look at the American Dream and the pursuit of success. With a rating of 4.6, it's a compelling exploration of the human condition."
+  },
+  {
+    "image": "https://i.ibb.co/r7g6M7k/dune.jpg",
+    "name": "Dune",
+    "quantity": 11,
+    "author": "Frank Herbert",
+    "category": "Sci-Fi",
+    "rating": 4.5,
+    "description": "Dune, authored by Frank Herbert, is a science fiction epic set in a distant future. It features political intrigue, complex characters, and a desert planet with a valuable resource known as 'melange' or 'spice.' With a rating of 4.7, it's a must-read for fans of intricate world-building and political drama."
+  },
+  {
+    "image": "https://i.ibb.co/jfMh242/neuromancer.jpg",
+    "name": "Neuromancer",
+    "quantity": 8,
+    "author": "William Gibson",
+    "category": "Sci-Fi",
+    "rating": 3.0,
+    "description": "Neuromancer by William Gibson is a groundbreaking cyberpunk novel that explores themes of hacking, artificial intelligence, and the blurred line between humans and machines. With a rating of 4.6, it's a visionary work that inspired the cyberpunk genre."
+  },
+  {
+    "image": "https://i.ibb.co/VMvpcL6/foundation.jpg",
+    "name": "Foundation",
+    "quantity": 10,
+    "author": "Isaac Asimov",
+    "category": "Sci-Fi",
+    "rating": 4.5,
+    "description": "Foundation, the first book in Isaac Asimov's classic series, is a tale of the decline and fall of a galactic empire. It introduces the concept of 'psychohistory' and explores the preservation of knowledge. With a rating of 4.9, it's a must-read for fans of epic science fiction."
+  },
+  {
+    "image": "https://i.ibb.co/9N2hBP4/enders.jpg",
+    "name": "Ender's Game",
+    "quantity": 9,
+    "author": "Orson Scott Card",
+    "category": "Sci-Fi",
+    "rating": 5,
+    "description": "Ender's Game by Orson Scott Card is a science fiction novel that follows the story of gifted children training to fight an alien invasion. The book combines elements of strategy, ethics, and military science. With a rating of 4.8, it's a captivating and thought-provoking adventure."
+  }
+]

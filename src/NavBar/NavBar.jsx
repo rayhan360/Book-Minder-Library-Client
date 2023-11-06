@@ -56,7 +56,7 @@ const NavBar = () => {
                     <NavLink to="/add-book">Add Book</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/myCart">All Books</NavLink>
+                    <NavLink to="/all-book">All Books</NavLink>
                   </li>
                   <li>
                     <NavLink to="/myCart">Borrowed Books</NavLink>

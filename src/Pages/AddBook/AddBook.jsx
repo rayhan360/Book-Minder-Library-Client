@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import Title from "../../components/Shared/Title";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const AddBook = () => {
   const {
@@ -10,20 +12,36 @@ const AddBook = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
+
+    // send data to server
+    axios.post("http://localhost:3000/api/v1/books", data).then((res) => {
+      if (res.data.insertedId) {
+        Swal.fire({
+          title: "Success!",
+          text: "Product Added Successfully",
+          icon: "success",
+          confirmButtonText: "Ok",
+        }
+        );
+      }
+    });
   };
 
   return (
     <div>
-        <Title>Add a new Book
-            <div className="text-xl mt-3 flex justify-center gap-3"> 
-            <NavLink to={'/'}><p >Home</p></NavLink>
-            <p>&lt;</p>
-            <p className="text-[#f6425f]"> Add Book</p>
-            </div>
-        </Title>
+      <Title>
+        Add a new Book
+        <div className="text-xl mt-3 flex justify-center gap-3">
+          <NavLink to={"/"}>
+            <p>Home</p>
+          </NavLink>
+          <p>&lt;</p>
+          <p className="text-[#f6425f]"> Add Book</p>
+        </div>
+      </Title>
 
-        {/* add book form */}
+      {/* add book form */}
       <div className="bg-gray-100 mb-5 max-w-7xl mx-auto p-5">
         <section className="contact bg-contact-bg bg-cover bg-center bg-fixed my-10">
           <form
@@ -90,7 +108,7 @@ const AddBook = () => {
                 <input
                   {...register("rating", { required: true })}
                   className="appearance-none block w-full bg-gray-100 text-gray-800 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  type="number"
+                  type="text"
                   placeholder="Rating of the books"
                 />
                 {errors.rating && <p>This field is required</p>}
