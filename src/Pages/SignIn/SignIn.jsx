@@ -3,6 +3,7 @@ import Title from "../../components/Shared/Title";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import signin from '../../assets/auth/login.gif'
+
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState();
   return (
@@ -23,6 +24,7 @@ const SignIn = () => {
           <div className="mt-20 flex flex-col bg-white p-10 rounded-xl bg-clip-border text-gray-700 shadow-none">
             <div className="flex justify-center">
               <img src={signin} alt="" />
+              {/* <Lottie animationData={signin}></Lottie> */}
             </div>
             <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
               Sign In
