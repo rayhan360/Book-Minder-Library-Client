@@ -7,6 +7,7 @@ import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import AllBook from "../Pages/AllBook/AllBook";
 import CategoryBook from "../components/CategoryBook/CategoryBook";
+import CategoryDetails from "../components/CategoryDetails/CategoryDetails";
 
 const Router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const Router = createBrowserRouter([
             {
                 path: '/category/:categoryName',
                 element:<CategoryBook></CategoryBook>,
+            },
+            {
+                path: '/categoryDetails/:id',
+                element: <CategoryDetails></CategoryDetails>
             },
             {
                 path: '/signIn',

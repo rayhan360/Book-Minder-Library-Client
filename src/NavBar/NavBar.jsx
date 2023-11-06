@@ -30,7 +30,7 @@ const NavBar = () => {
 
   return (
     <div className={`lg:fixed top-0 left-0 right-0 ${navbarBackground} transition-all duration-300 z-50 lg:text-white`}>
-      <div className="flex justify-between py-4 items-center max-w-7xl mx-auto">
+      <div className="flex justify-between items-center max-w-7xl mx-auto">
         <div className="flex items-center font-bold text-lg">
           <img src={logo} className="w-32" alt="logo of the website" />
         </div>

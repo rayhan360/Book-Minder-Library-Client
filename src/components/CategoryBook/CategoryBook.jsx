@@ -1,10 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import useBook from "../../hooks/useBook/useBook";
 import useCategory from "../../hooks/useCategory/useCategory";
 import Loading from "../Shared/Loading";
 import Title from "../Shared/Title";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, Link } from "react-router-dom";
 import { FaInfoCircle } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
+import { useEffect } from "react";
 
 const CategoryBook = () => {
   const { data: category, isLoading: categoryLoading } = useCategory();
@@ -27,10 +29,14 @@ const CategoryBook = () => {
 
   console.log(filterBooksByCategory);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <Title>
-        See Books
+        Category Book
         <div className="text-xl mt-3 flex justify-center gap-3">
           <NavLink to={"/"}>
             <p>Home</p>
@@ -61,10 +67,12 @@ const CategoryBook = () => {
               />
 
               {/* Details Button */}
-              <button className="mt-4 w-full bg-[#f6425f] flex justify-center items-center py-3 text-white">
-                <FaInfoCircle className="mr-2" />
-                <p>Details</p>
-              </button>
+              <Link to={`/categoryDetails/${book._id}`}>
+                <button className="mt-4 w-full bg-[#f6425f] flex justify-center items-center py-3 text-white">
+                  <FaInfoCircle className="mr-2" />
+                  <p>Details</p>
+                </button>
+              </Link>
             </div>
           </div>
         ))}
