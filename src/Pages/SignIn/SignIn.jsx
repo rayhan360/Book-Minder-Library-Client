@@ -2,10 +2,44 @@ import { Link, NavLink } from "react-router-dom";
 import Title from "../../components/Shared/Title";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import signin from '../../assets/auth/login.gif'
+import signin from "../../assets/auth/login.gif";
+import SocialAuth from "../../components/Shared/SocialAuth";
+import useAuth from "../../hooks/useAuth/useAuth";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState();
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    login(email, password)
+      .then((result) => {
+        console.log(result.user);
+        toast.success("User Login Successful");
+        e.target.reset();
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        if (error.code === "auth/wrong-password") {
+          toast.error("Incorrect password. Please try again.");
+        } else if (error.code === "auth/user-not-found") {
+          toast.error("User not found. Please check your email.");
+        } else if (error.code === "auth/invalid-login-credentials") {
+          toast.error(
+            "Invalid email or password. Please double-check your email and password."
+          );
+        } else {
+          toast.error("please provide valid password and email");
+        }
+      });
+  };
   return (
     <div>
       <Title>
@@ -32,7 +66,10 @@ const SignIn = () => {
             <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
               Enter your details to Login.
             </p>
-            <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+            <form
+              onSubmit={handleLogIn}
+              className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
+            >
               <div className="mb-4 flex flex-col gap-6">
                 <div className="relative h-11 w-full min-w-[200px]">
                   <input
@@ -85,11 +122,14 @@ const SignIn = () => {
               </button>
             </form>
 
-            {/* <SocialAuth></SocialAuth> */}
+            <div>
+              <p className="text-center mb-5">---------- or -----------</p>
+              <SocialAuth></SocialAuth>
+            </div>
             <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
               Do not have an account?
               <Link
-                to="/registration"
+                to="/signUp"
                 className="font-medium text-[#f6425f] transition-colors hover:text-blue-700"
                 href="#"
               >

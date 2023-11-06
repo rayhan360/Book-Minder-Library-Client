@@ -3,10 +3,14 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import logo from "../assets/logo2.png";
 import "./NavBar.css";
+import useAuth from "../hooks/useAuth/useAuth";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const [navbarBackground, setNavbarBackground] = useState("transparent");
+  const { user, logOut } = useAuth()
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,27 +69,27 @@ const NavBar = () => {
 
                 <div>
                   {
-                    // user ?
-                    //     <div className=" flex items-center gap-3">
-                    //         <div className="dropdown dropdown-end">
-                    //             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    //                 <div className="w-10 rounded-full">
-                    //                     <img src={user.photoURL} alt={user.displayName} />
-                    //                 </div>
-                    //             </label>
-                    //             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 md:w-96">
-                    //                 <li>
-                    //                     <button className="text-black text-base"><span className="font-medium">Name:</span> {user.displayName}</button>
-                    //                 </li>
-                    //                 <li><button className="text-black text-base"><span className="font-medium">Email:</span> {user.email ? user.email : "email not found"}</button></li>
-                    //             </ul>
-                    //         </div>
-                    //         <div>
-                    //             <button onClick={logOut} className="bg-indigo-600 text-white px-5 py-2 rounded-md"
-                    //             >Sign Out</button>
-                    //         </div>
-                    //     </div>
-                    //     :
+                    user ?
+                        <div className=" flex items-center gap-3">
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img src={user.photoURL} alt={user.displayName} />
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 md:w-96">
+                                    <li>
+                                        <button className="text-black text-base"><span className="font-medium">Name:</span> {user.displayName}</button>
+                                    </li>
+                                    <li><button className="text-black text-base"><span className="font-medium">Email:</span> {user.email ? user.email : "email not found"}</button></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <button onClick={logOut} className="bg-[#f6425f] text-white px-5 py-2 rounded-md"
+                                >Sign Out</button>
+                            </div>
+                        </div>
+                        :
                     <div className="mb-5 md:mb-0">
                       <Link to="/signIn">
                         <button
