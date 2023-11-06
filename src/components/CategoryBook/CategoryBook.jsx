@@ -5,8 +5,8 @@ import Loading from "../Shared/Loading";
 import Title from "../Shared/Title";
 import { NavLink, useParams, Link } from "react-router-dom";
 import { FaInfoCircle } from "react-icons/fa";
-import ReactStars from "react-rating-stars-component";
 import { useEffect } from "react";
+import Ratings from "../Shared/Rating";
 
 const CategoryBook = () => {
   const { data: category, isLoading: categoryLoading } = useCategory();
@@ -58,13 +58,14 @@ const CategoryBook = () => {
               <h2 className="text-xl font-bold">{book.name}</h2>
               <p className="text-gray-600">by {book.author}</p>
               <p className="text-gray-600">Category: {book.category}</p>
-              <ReactStars
+              {/* <ReactStars
                 count={5}
                 value={book.rating}
                 size={24}
                 activeColor="#ffd700"
                 edit={false}
-              />
+              /> */}
+              <Ratings rating={book.rating}></Ratings>
 
               {/* Details Button */}
               <Link to={`/categoryDetails/${book._id}`}>

@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Title from "../../components/Shared/Title";
 import useBook from "../../hooks/useBook/useBook";
 import Loading from "../../components/Shared/Loading";
+import Ratings from "../../components/Shared/Rating";
 
 const AllBook = () => {
   const { data, isLoading } = useBook();
@@ -43,9 +44,13 @@ const AllBook = () => {
                 </div>
                 <div className="flex items-center">
                   <p>
-                    <span className="font-medium">Rating</span>: {book.rating}
+                    <Ratings rating={book.rating}></Ratings>
                   </p>
-                  <button className="bg-[#f6425f] text-white px-5 py-2 rounded-md">Update book</button>
+                  <Link to={"/update-book"}>
+                    <button className="bg-[#f6425f] text-white px-5 py-2 rounded-md">
+                      Update book
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

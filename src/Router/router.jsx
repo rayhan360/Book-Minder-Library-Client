@@ -8,42 +8,53 @@ import SignUp from "../Pages/SignUp/SignUp";
 import AllBook from "../Pages/AllBook/AllBook";
 import CategoryBook from "../components/CategoryBook/CategoryBook";
 import CategoryDetails from "../components/CategoryDetails/CategoryDetails";
+import PDF from "../components/PDF/PDF";
+import Update from "../components/Update/Update";
 
 const Router = createBrowserRouter([
-    {
-        path: '/',
-        element: <MainLayout></MainLayout>,
-        errorElement: <ErrorPage></ErrorPage>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>
-            },
-            {
-                path: '/add-book',
-                element: <AddBook></AddBook>
-            },
-            {
-                path: '/all-book',
-                element: <AllBook></AllBook>
-            },
-            {
-                path: '/category/:categoryName',
-                element:<CategoryBook></CategoryBook>,
-            },
-            {
-                path: '/categoryDetails/:id',
-                element: <CategoryDetails></CategoryDetails>
-            },
-            {
-                path: '/signIn',
-                element: <SignIn></SignIn>
-            },
-            {
-                path: '/signUp',
-                element: <SignUp></SignUp>
-            },
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/add-book",
+        element: <AddBook></AddBook>,
+      },
+      {
+        path: "/all-book",
+        element: <AllBook></AllBook>,
+      },
+      {
+        path: "/category/:categoryName",
+        element: <CategoryBook></CategoryBook>,
+      },
+      {
+        path: "/categoryDetails/:id",
+        element: <CategoryDetails></CategoryDetails>,
+      },
+      {
+        path: "/signIn",
+        element: <SignIn></SignIn>,
+      },
+      {
+        path: "/signUp",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: '/update-book/:id',
+        element: <Update />,
+        loader: ({params})=> fetch(`http://localhost:3000/api/v1/books/${params.id}`)
+      }
+    ],
+  },
+  {
+    path: "/book/pdf",
+    element: <PDF></PDF>,
+  },
+]);
 export default Router;

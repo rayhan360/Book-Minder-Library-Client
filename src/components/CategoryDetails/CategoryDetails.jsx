@@ -2,11 +2,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import useBook from "../../hooks/useBook/useBook";
 import Loading from "../Shared/Loading";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, Link } from "react-router-dom";
 import Title from "../Shared/Title";
 import { FaBook, FaHandHoldingHeart } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
-
 
 const CategoryDetails = () => {
   const { data: bookDetails, isLoading } = useBook();
@@ -21,10 +20,10 @@ const CategoryDetails = () => {
   const { image, name, quantity, author, category, rating, description } =
     findBookDetails;
   console.log(description);
-  
-//   useEffect(() => {
-//     window.scrollTo(0, 0);
-//   }, []);
+
+  //   useEffect(() => {
+  //     window.scrollTo(0, 0);
+  //   }, []);
   return (
     <div>
       <Title>
@@ -37,7 +36,7 @@ const CategoryDetails = () => {
           <NavLink to={`/category/${category}`}>
             <p>Category Details</p>
           </NavLink>
-           
+
           <p>&lt;</p>
 
           <p className="text-[#f6425f]">{name}</p>
@@ -48,11 +47,7 @@ const CategoryDetails = () => {
         <div className="p-4 bg-white shadow-lg rounded-lg">
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-2/5 rounded-lg flex justify-center overflow-hidden">
-              <img
-                src={image}
-                alt={name}
-                className="w-80 object-cover"
-              />
+              <img src={image} alt={name} className="w-80 object-cover" />
             </div>
 
             <div className="w-full md:w-3/5 pl-4">
@@ -70,8 +65,7 @@ const CategoryDetails = () => {
               <div className="flex items-center mb-4">
                 <div className="flex-1">
                   <p className="text-gray-600">
-                    <span className="font-semibold">Quantity:</span>{" "}
-                    {quantity}
+                    <span className="font-semibold">Quantity:</span> {quantity}
                   </p>
                 </div>
                 <div className="flex-1">
@@ -87,10 +81,12 @@ const CategoryDetails = () => {
 
               {/* Action Buttons */}
               <div className="flex space-x-4">
-                <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg flex items-center">
-                  <FaBook className="mr-2" />
-                  Read
-                </button>
+                <Link to={'/book/pdf'}>
+                  <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg flex items-center">
+                    <FaBook className="mr-2" />
+                    Read
+                  </button>
+                </Link>
                 <button className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-lg flex items-center">
                   <FaHandHoldingHeart className="mr-2" />
                   Borrow
