@@ -6,6 +6,7 @@ import AddBook from "../Pages/AddBook/AddBook";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import AllBook from "../Pages/AllBook/AllBook";
+import CategoryBook from "../components/CategoryBook/CategoryBook";
 
 const Router = createBrowserRouter([
     {
@@ -26,13 +27,17 @@ const Router = createBrowserRouter([
                 element: <AllBook></AllBook>
             },
             {
+                path: '/category/:categoryName',
+                element:<CategoryBook></CategoryBook>,
+            },
+            {
                 path: '/signIn',
                 element: <SignIn></SignIn>
             },
             {
                 path: '/signUp',
                 element: <SignUp></SignUp>
-            }
+            },
         ]
     }
 ])

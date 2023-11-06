@@ -26,7 +26,7 @@ const AllBook = () => {
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-3 max-w-[1500] mx-auto my-10">
         {data.map((book) => (
           <div className="" key={book._id}>
-            <div className="card card-side bg-base-100 shadow-xl h-40">
+            <div className="card card-side bg-base-100 shadow-xl h-44">
               <figure>
                 <img src={book.image} className="w-32" alt="Movie" />
               </figure>
@@ -41,9 +41,12 @@ const AllBook = () => {
                     {book.category}
                   </p>
                 </div>
-                <p>
-                  <span className="font-medium">Rating</span>: {book.rating}
-                </p>
+                <div className="flex items-center">
+                  <p>
+                    <span className="font-medium">Rating</span>: {book.rating}
+                  </p>
+                  <button className="bg-[#f6425f] text-white px-5 py-2 rounded-md">Update book</button>
+                </div>
               </div>
             </div>
           </div>

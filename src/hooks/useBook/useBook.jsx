@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const useBook = () => {
     const { data, isLoading, isFetching, refetch } = useQuery({
-        queryKey: ["recipies"],
+        queryKey: ["books"],
         queryFn: async () => {
           const data = await fetch("http://localhost:3000/api/v1/books", {
             credentials: "include",

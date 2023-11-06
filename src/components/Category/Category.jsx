@@ -1,16 +1,15 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../Shared/Loading";
+import useCategory from "../../hooks/useCategory/useCategory";
 
 const Category = () => {
-  const [category, setCategory] = useState([]);
 
-  useEffect(() => {
-    axios.get("http://localhost:3000/api/v1/category").then((res) => {
-      setCategory(res.data);
-      console.log(res.data);
-    });
-  }, []);
+  const { data:category, isLoading } = useCategory();
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+
   return (
     <div className="bg-gray-200 p-5">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 my-5 max-w-7xl mx-auto">
@@ -26,7 +25,7 @@ const Category = () => {
               </figure>
               <div className="card-body items-center text-center">
                 <h2 className="card-title">{cat.categoryName}</h2>
-                <Link to={`${cat.categoryName}`}>
+                <Link to={`/category/${cat.categoryName}`}>
                   <a
                     className="inline-flex items-center font-medium text-[#f6425f] hover:[#f6425f] dark:text-[#f6425f] dark:hover:text-[#f6325f]"
                   >
