@@ -3,13 +3,17 @@ import Title from "../../components/Shared/Title";
 import useBook from "../../hooks/useBook/useBook";
 import Loading from "../../components/Shared/Loading";
 import Ratings from "../../components/Shared/Rating";
+import { useState } from "react";
 
 const AllBook = () => {
   const { data, isLoading } = useBook();
+  const [filterBook, setFilterBook] = useState("all")
 
   if (isLoading) {
     return <Loading></Loading>;
   }
+
+  const filteredBooks = filterBook === "available"  ? data.filter(book => book.quantity > 0) : data;
 
   return (
     <div>
@@ -23,9 +27,19 @@ const AllBook = () => {
           <p className="text-[#f6425f]"> All Book</p>
         </div>
       </Title>
-
+      <div className="flex justify-end">
+        <select 
+        onChange={(e) => setFilterBook(e.target.value)}
+        className="select select-bordered w-full max-w-xs mr-5 mt-5">
+          <option disabled selected>
+           Filter
+          </option>
+          <option value={"available"}>Available Book</option>
+          <option value={"all"}>All Book</option>
+        </select>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-3 max-w-[1500] mx-auto my-10">
-        {data.map((book) => (
+        {filteredBooks.map((book) => (
           <div className="" key={book._id}>
             <div className="card card-side bg-base-100 shadow-xl h-44">
               <figure>
