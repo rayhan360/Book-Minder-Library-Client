@@ -6,12 +6,13 @@ import signin from "../../assets/auth/login.gif";
 import SocialAuth from "../../components/Shared/SocialAuth";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState();
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation()
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -23,7 +24,7 @@ const SignIn = () => {
         console.log(result.user);
         toast.success("User Login Successful");
         e.target.reset();
-        navigate("/");
+        navigate(location?.state ? location?.state :"/");
       })
       .catch((error) => {
         console.log(error);

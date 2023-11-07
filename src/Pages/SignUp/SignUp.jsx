@@ -8,12 +8,13 @@ import SocialAuth from "../../components/Shared/SocialAuth";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { createUser } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation()
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -53,7 +54,7 @@ const SignUp = () => {
           displayName: name,
           photoURL: photo,
         });
-        navigate("/");
+        navigate(location?.state ? location?.state : "/");
         window.location.reload();
       })
       .catch((error) => {

@@ -11,6 +11,7 @@ import CategoryDetails from "../components/CategoryDetails/CategoryDetails";
 import PDF from "../components/PDF/PDF";
 import Update from "../components/Update/Update";
 import BorrowBook from "../Pages/BorrowBook/BorrowBook";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
   {
@@ -24,11 +25,11 @@ const Router = createBrowserRouter([
       },
       {
         path: "/add-book",
-        element: <AddBook></AddBook>,
+        element: <PrivateRoute><AddBook></AddBook></PrivateRoute>,
       },
       {
         path: "/all-book",
-        element: <AllBook></AllBook>,
+        element: <PrivateRoute><AllBook></AllBook></PrivateRoute>,
       },
       {
         path: "/category/:categoryName",
@@ -36,11 +37,11 @@ const Router = createBrowserRouter([
       },
       {
         path: "/categoryDetails/:id",
-        element: <CategoryDetails></CategoryDetails>,
+        element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
       },
       {
         path: "/borrowed-book",
-        element: <BorrowBook></BorrowBook>
+        element: <PrivateRoute><BorrowBook></BorrowBook></PrivateRoute>
       },
       {
         path: "/signIn",

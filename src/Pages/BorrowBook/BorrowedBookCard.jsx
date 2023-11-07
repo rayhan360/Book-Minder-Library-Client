@@ -2,10 +2,9 @@
 
 import Swal from "sweetalert2";
 
-
-const BorrowedBookCard = ({ borrow }) => {
+const BorrowedBookCard = ({ borrow, setBorrowBook, borrowBook }) => {
   const { _id, returnData, borrowDate, image, bookName, category } = borrow;
-  // 
+  //
   const handleReturnBook = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -29,6 +28,8 @@ const BorrowedBookCard = ({ borrow }) => {
                 "You successfully resturn a book",
                 "success"
               );
+              const remaining = borrowBook.filter(det => det._id !== _id)
+              setBorrowBook(remaining)
             }
           });
       }

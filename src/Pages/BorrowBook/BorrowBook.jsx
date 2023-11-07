@@ -33,7 +33,7 @@ const BorrowBook = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl mx-auto">
         {borrowBook.map((borrow) => (
-            <BorrowedBookCard key={borrow._id} borrow={borrow}>
+            <BorrowedBookCard key={borrow._id} borrow={borrow} borrowBook={borrowBook} setBorrowBook={setBorrowBook}>
             </BorrowedBookCard>
         ))}
       </div>
