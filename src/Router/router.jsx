@@ -10,6 +10,7 @@ import CategoryBook from "../components/CategoryBook/CategoryBook";
 import CategoryDetails from "../components/CategoryDetails/CategoryDetails";
 import PDF from "../components/PDF/PDF";
 import Update from "../components/Update/Update";
+import BorrowBook from "../Pages/BorrowBook/BorrowBook";
 
 const Router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const Router = createBrowserRouter([
       {
         path: "/categoryDetails/:id",
         element: <CategoryDetails></CategoryDetails>,
+      },
+      {
+        path: "/borrowed-book",
+        element: <BorrowBook></BorrowBook>
       },
       {
         path: "/signIn",

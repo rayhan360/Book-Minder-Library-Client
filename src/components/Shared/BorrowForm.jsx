@@ -63,7 +63,7 @@ const BorrowForm = ({ findBookDetails, user, refetch }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 p-5 rounded-xl bg-clip-border">
+        <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-full p-5 rounded-xl bg-clip-border">
           <div className="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl bg-[#f6425f] bg-clip-border shadow-[#f6425f]/40">
             <h3 className="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
               Borrow a Book
