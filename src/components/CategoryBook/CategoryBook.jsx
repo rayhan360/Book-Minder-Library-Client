@@ -12,6 +12,9 @@ const CategoryBook = () => {
   const { data: category, isLoading: categoryLoading } = useCategory();
   const { data: books, isLoading: bookLoading } = useBook();
   const { categoryName: nameCategory } = useParams();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (categoryLoading || bookLoading) {
     return <Loading />;
@@ -28,10 +31,6 @@ const CategoryBook = () => {
   );
 
   console.log(filterBooksByCategory);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div>
@@ -58,13 +57,6 @@ const CategoryBook = () => {
               <h2 className="text-xl font-bold">{book.name}</h2>
               <p className="text-gray-600">by {book.author}</p>
               <p className="text-gray-600">Category: {book.category}</p>
-              {/* <ReactStars
-                count={5}
-                value={book.rating}
-                size={24}
-                activeColor="#ffd700"
-                edit={false}
-              /> */}
               <Ratings rating={book.rating}></Ratings>
 
               {/* Details Button */}

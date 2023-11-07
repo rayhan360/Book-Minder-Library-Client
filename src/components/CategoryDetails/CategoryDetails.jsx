@@ -6,9 +6,11 @@ import { useParams, NavLink, Link } from "react-router-dom";
 import Title from "../Shared/Title";
 import { FaBook, FaHandHoldingHeart } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
+import BorrowForm from "../Shared/BorrowForm";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 const CategoryDetails = () => {
-  const { data: bookDetails, isLoading } = useBook();
+  const { data: bookDetails, isLoading, refetch } = useBook();
 
   const { id } = useParams();
 
@@ -16,10 +18,12 @@ const CategoryDetails = () => {
     return <Loading></Loading>;
   }
 
+  const { user } = useAuth();
+
   const findBookDetails = bookDetails.find((detail) => detail._id === id);
   const { image, name, quantity, author, category, rating, description } =
     findBookDetails;
-  console.log(description);
+  
 
   //   useEffect(() => {
   //     window.scrollTo(0, 0);
@@ -81,16 +85,39 @@ const CategoryDetails = () => {
 
               {/* Action Buttons */}
               <div className="flex space-x-4">
-                <Link to={'/book/pdf'}>
+                <Link to={"/book/pdf"}>
                   <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg flex items-center">
                     <FaBook className="mr-2" />
                     Read
                   </button>
                 </Link>
-                <button className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-lg flex items-center">
+                {/* You can open the modal using document.getElementById('ID').showModal() method */}
+                {
+                    quantity > 0 ?
+                    <button
+                  className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-lg flex items-center"
+                  onClick={() =>
+                    document.getElementById("my_modal_3").showModal()
+                  }
+                >
                   <FaHandHoldingHeart className="mr-2" />
                   Borrow
                 </button>
+                : <button disabled className="bg-gray-400 text-white py-2 px-4 rounded-lg flex items-center">stock out</button>
+                }
+                
+                <dialog id="my_modal_3" className="modal">
+                  <div className="modal-box">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                        ✕
+                      </button>
+                    </form>
+                    {/*  */}
+                    <BorrowForm findBookDetails={findBookDetails} user={user} refetch={refetch}></BorrowForm>
+                  </div>
+                </dialog>
               </div>
             </div>
           </div>
