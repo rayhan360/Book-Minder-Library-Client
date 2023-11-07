@@ -133,7 +133,7 @@ const Update = () => {
             {errors.description && <p>This field is required</p>}
             <input
               type="submit"
-              value="Add Book"
+              value="Update Book"
               className="btn bg-[#f6425f] w-full text-white px-5 py-2 rounded-md mt-4 hover:bg-[#f9c589]"
             />
           </form>

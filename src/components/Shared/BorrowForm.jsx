@@ -3,7 +3,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
-import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const BorrowForm = ({ findBookDetails, user, refetch }) => {
   console.log(user);
@@ -37,27 +37,17 @@ const BorrowForm = ({ findBookDetails, user, refetch }) => {
     };
     console.log(data);
     axios
-      .post("http://localhost:3000/api/v1/borrow", data)
+      .post("http://localhost:3000/api/v1/borrow-book", data)
       .then((res) => {
         console.log(res.data);
         if (res.data.borrowResult.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "Borrow Book Successfully",
-            icon: "success",
-            confirmButtonText: "Ok",
-          });
+          toast.success("Borrow Book Successfull");
           refetch();
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-        Swal.fire({
-          title: "Error!",
-          text: "This book is already borrowed by the user.",
-          icon: "error",
-          confirmButtonText: "Ok",
-        });
+        toast.error("This book is already borrowed by you.");
       });
   };
   return (
@@ -91,8 +81,9 @@ const BorrowForm = ({ findBookDetails, user, refetch }) => {
               </label>
             </div>
             <div className="relative h-11 w-full min-w-[200px]">
-              <div className="w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f6425f] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+              <div>
                 <DatePicker
+                  className="w-64 md:w-[375px] px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-[#f6425f] focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   selected={returnData}
                   onChange={(date) => setReturnDate(date)}
                 />

@@ -1,17 +1,17 @@
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
-import { useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SocialAuth = () => {
   const { googleSignIn } = useAuth();
-  const navigate = useNavigation();
+  const navigate = useNavigate();
   const socialMediaSignIn = (media) => {
     media()
       .then((result) => {
         console.log(result.user);
         toast.success("user logged in successful");
-        navigate(location?.state ? location.state : "/");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
