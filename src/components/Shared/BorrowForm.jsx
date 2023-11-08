@@ -37,7 +37,7 @@ const BorrowForm = ({ findBookDetails, user, refetch }) => {
     };
     console.log(data);
     axios
-      .post("http://localhost:3000/api/v1/borrow-book", data)
+      .post("https://book-minder-library-server.vercel.app/api/v1/borrow-book", data)
       .then((res) => {
         console.log(res.data);
         if (res.data.borrowResult.insertedId) {

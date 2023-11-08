@@ -33,7 +33,7 @@ const Router = createBrowserRouter([
       },
       {
         path: "/category/:categoryName",
-        element: <CategoryBook></CategoryBook>,
+        element: <PrivateRoute><CategoryBook></CategoryBook></PrivateRoute>,
       },
       {
         path: "/categoryDetails/:id",
@@ -54,7 +54,7 @@ const Router = createBrowserRouter([
       {
         path: '/update-book/:id',
         element: <Update />,
-        loader: ({params})=> fetch(`http://localhost:3000/api/v1/books/${params.id}`)
+        loader: ({params})=> fetch(`https://book-minder-library-server.vercel.app/api/v1/books/${params.id}`)
       }
     ],
   },

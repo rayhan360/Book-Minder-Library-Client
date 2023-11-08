@@ -67,7 +67,7 @@ const AuthProvider = ({ children }) => {
       // if user exist then issue a token
       if (currentUser) {
         axios
-          .post("http://localhost:3000/api/v1/jwt", loggedInUser, {
+          .post("https://book-minder-library-server.vercel.app/api/v1/jwt", loggedInUser, {
             withCredentials: true,
           })
           .then((res) => {
@@ -75,7 +75,7 @@ const AuthProvider = ({ children }) => {
           });
       } else {
         axios
-          .post("http://localhost:3000/api/v1/logout", loggedInUser, {
+          .post("https://book-minder-library-server.vercel.app/api/v1/logout", loggedInUser, {
             withCredentials: true,
           })
           .then((res) => {

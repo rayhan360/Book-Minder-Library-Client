@@ -18,7 +18,7 @@ const Update = () => {
   const onSubmit = (data) => {
 
     // update books
-    axios.put(`http://localhost:3000/api/v1/books/${_id}`, data)
+    axios.put(`https://book-minder-library-server.vercel.app/api/v1/books/${_id}`, data)
     .then(res => {
         console.log(res.data);
         if (res.data.modifiedCount > 0) {

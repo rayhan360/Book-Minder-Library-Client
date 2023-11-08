@@ -10,7 +10,7 @@ const BorrowBook = () => {
   const { user } = useAuth();
   const [borrowBook, setBorrowBook] = useState([]);
 
-  const url = `http://localhost:3000/api/v1/borrow-book?email=${user?.email}`;
+  const url = `https://book-minder-library-server.vercel.app/api/v1/borrow-book?email=${user?.email}`;
 
   useEffect(() => {
     axios.get(url, { withCredentials: true }).then((res) => {

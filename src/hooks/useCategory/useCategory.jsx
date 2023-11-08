@@ -4,7 +4,7 @@ const useCategory = () => {
   const { data, isLoading, isFetching, refetch } = useQuery({
     queryKey: ["categories"],
     queryFn: async () => {
-      const data = await fetch("http://localhost:3000/api/v1/category", {
+      const data = await fetch("https://book-minder-library-server.vercel.app/api/v1/category", {
         credentials: "include",
       });
       return await data.json();
