@@ -4,6 +4,7 @@ import useBook from "../../hooks/useBook/useBook";
 import Loading from "../../components/Shared/Loading";
 import Ratings from "../../components/Shared/Rating";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const AllBook = () => {
   const { data, isLoading } = useBook();
@@ -27,6 +28,9 @@ const AllBook = () => {
           <p className="text-[#f6425f]"> All Book</p>
         </div>
       </Title>
+      <Helmet>
+        <title>All Books</title>
+      </Helmet>
       <div className="flex justify-end">
         <select 
         onChange={(e) => setFilterBook(e.target.value)}

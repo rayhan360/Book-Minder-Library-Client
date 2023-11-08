@@ -5,8 +5,8 @@ import total from "../../../../assets/online/total.png";
 import line from "../../../../assets/bg.png"
 const Experience = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto my-20">
-      <div className=" lg:mt-20">
+    <div className="grid grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto my-20" >
+      <div className=" lg:mt-20" data-aos="fade-up-left">
         <h1 className="text-3xl font-medium text-center lg:mt-20">
           <span className="font-extrabold">22 Years</span> Services In Our
           Library
@@ -20,7 +20,7 @@ const Experience = () => {
         </p>
         <img src={line} className="h-32 w-full" alt="" />
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center" data-aos="fade-up-right">
         <div className="flex gap-10">
           <div>
             <div className="card shadow-xl">

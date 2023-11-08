@@ -9,6 +9,7 @@ import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -76,7 +77,9 @@ const SignUp = () => {
           <p className="text-[#f6425f]">Sign up</p>
         </div>
       </Title>
-
+      <Helmet>
+        <title>Sign Up</title>
+      </Helmet>
 
         <div className="flex justify-center mb-5">
           <div className="mt-20 flex flex-col bg-white p-10 rounded-xl bg-clip-border text-gray-700 shadow-none">

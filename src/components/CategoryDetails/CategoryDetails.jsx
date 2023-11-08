@@ -8,6 +8,7 @@ import { FaBook, FaHandHoldingHeart } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
 import BorrowForm from "../Shared/BorrowForm";
 import useAuth from "../../hooks/useAuth/useAuth";
+import { Helmet } from "react-helmet";
 
 const CategoryDetails = () => {
   const { data: bookDetails, isLoading, refetch } = useBook();
@@ -48,6 +49,9 @@ const CategoryDetails = () => {
       </Title>
 
       <div>
+        <Helmet>
+          <title>{name}</title>
+        </Helmet>
         <div className="p-4  shadow-lg rounded-lg">
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-2/5 rounded-lg flex justify-center overflow-hidden">

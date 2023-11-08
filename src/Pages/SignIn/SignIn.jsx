@@ -8,6 +8,7 @@ import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState();
@@ -65,6 +66,9 @@ const SignIn = () => {
         </div>
       </Title>
 
+    <Helmet>
+      <title>Sign In</title>
+    </Helmet>
       <div>
         <div className="flex justify-center mb-5">
           <div className="mt-20 flex flex-col bg-white p-10 rounded-xl bg-clip-border text-gray-700 shadow-none">

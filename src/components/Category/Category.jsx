@@ -12,7 +12,7 @@ const Category = () => {
 
   return (
     <div className=" p-5">
-      <div>
+      <div data-aos="fade-up">
         <h1 className="text-3xl font-medium text-center my-3 border-b-2 pb-5">
           Popular Book Category Here
         </h1>
@@ -20,7 +20,7 @@ const Category = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 my-5 max-w-7xl mx-auto">
         {category.map((cat) => (
           <div key={cat._id}>
-            <div className="card shadow-xl">
+            <div className="card shadow-xl" data-aos="fade-down">
               <figure className="px-10 pt-10">
                 <img
                   src={cat.categoryImage}

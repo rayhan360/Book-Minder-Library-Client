@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const AddBook = () => {
   const {
@@ -36,6 +37,9 @@ const AddBook = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Add Book</title>
+      </Helmet>
       <Title>
         Add a new Book
         <div className="text-xl mt-3 flex justify-center gap-3">

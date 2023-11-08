@@ -7,6 +7,7 @@ import { NavLink, useParams, Link } from "react-router-dom";
 import { FaInfoCircle } from "react-icons/fa";
 import { useEffect } from "react";
 import Ratings from "../Shared/Rating";
+import { Helmet } from "react-helmet";
 
 const CategoryBook = () => {
   const { data: category, isLoading: categoryLoading } = useCategory();
@@ -67,6 +68,9 @@ const CategoryBook = () => {
                 </button>
               </Link>
             </div>
+            <Helmet>
+              <title>{book.category}</title>
+            </Helmet>
           </div>
         ))}
       </div>
