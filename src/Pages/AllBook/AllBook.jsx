@@ -41,7 +41,7 @@ const AllBook = () => {
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-3 max-w-[1500] mx-auto my-10">
         {filteredBooks.map((book) => (
           <div className="" key={book._id}>
-            <div className="card card-side bg-base-100 shadow-xl h-44">
+            <div className="card lg:card-side bg-base-100 shadow-xl h-80 lg:h-44">
               <figure>
                 <img src={book.image} className="w-32" alt="Movie" />
               </figure>

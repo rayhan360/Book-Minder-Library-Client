@@ -3,6 +3,7 @@ import Title from "../../components/Shared/Title";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const AddBook = () => {
   const {
@@ -15,7 +16,8 @@ const AddBook = () => {
     // console.log(data);
 
     // send data to server
-    axios.post("http://localhost:3000/api/v1/books", data).then((res) => {
+    axios.post("http://localhost:3000/api/v1/books", data, {withCredentials: true})
+    .then((res) => {
       if (res.data.insertedId) {
         Swal.fire({
           title: "Success!",
@@ -25,7 +27,11 @@ const AddBook = () => {
         }
         );
       }
-    });
+    })
+    .catch(error => {
+      console.log(error);
+      toast.error("this book is already added, please update a books")
+    })
   };
 
   return (

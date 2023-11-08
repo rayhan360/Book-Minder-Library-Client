@@ -29,14 +29,14 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div className={`lg:fixed top-0 left-0 right-0 ${navbarBackground} transition-all duration-300 z-50 lg:text-white`}>
+    <div className={`lg:fixed top-0 left-0 right-0 bg-[#1a2d62] lg:bg-${navbarBackground} transition-all duration-300 z-50  lg:text-white`}>
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <div className="flex items-center font-bold text-lg">
           <img src={logo} className="w-32" alt="logo of the website" />
         </div>
         <div className="">
           <div
-            className="lg:hidden text-2xl mr-8 mt-5"
+            className="lg:hidden text-2xl mr-8 mt-5 text-white"
             onClick={() => setOpen(!open)}
           >
             {open === true ? (
@@ -77,11 +77,11 @@ const NavBar = () => {
                                         <img src={user.photoURL} alt={user.displayName} />
                                     </div>
                                 </label>
-                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 md:w-96">
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-72 md:w-96">
                                     <li>
                                         <button className="text-black text-base"><span className="font-medium">Name:</span> {user.displayName}</button>
                                     </li>
-                                    <li><button className="text-black text-base"><span className="font-medium">Email:</span> {user.email ? user.email : "email not found"}</button></li>
+                                    <li><button className="text-black text-base"><span className="font-medium"></span> {user.email ? user.email : "email not found"}</button></li>
                                 </ul>
                             </div>
                             <div>

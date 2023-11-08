@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
 import auth from "../../config/firebase.config";
+import axios from "axios";
+
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -22,9 +24,9 @@ const AuthProvider = ({ children }) => {
 
   // google sign in
   const googleSignIn = () => {
-    setLoading(true)
-    return signInWithPopup(auth, googleAuthProvider)
-  }
+    setLoading(true);
+    return signInWithPopup(auth, googleAuthProvider);
+  };
 
   // create a accoutn with email and password
   const createUser = (email, password) => {
@@ -35,7 +37,7 @@ const AuthProvider = ({ children }) => {
   // login user with email and password
   const login = (email, password) => {
     setLoading(true);
-    return signInWithEmailAndPassword(auth,email, password);
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   // sign out
@@ -58,18 +60,38 @@ const AuthProvider = ({ children }) => {
   // observe account
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      const userEmail = currentUser?.email || user?.email;
+      const loggedInUser = { email: userEmail };
       setUser(currentUser);
       setLoading(false);
+      // if user exist then issue a token
+      if (currentUser) {
+        axios
+          .post("http://localhost:3000/api/v1/jwt", loggedInUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log("token response authprovider", res.data);
+          });
+      } else {
+        axios
+          .post("http://localhost:3000/api/v1/logout", loggedInUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log("logout response data", res.data);
+          });
+      }
     });
     return () => unSubscribe();
-  }, []);
+  }, [user?.email]);
   const authInfo = {
     user,
     loading,
     createUser,
     googleSignIn,
     login,
-    logOut
+    logOut,
   };
   return (
     <div>
