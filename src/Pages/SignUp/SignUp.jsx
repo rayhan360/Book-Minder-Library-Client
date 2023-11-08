@@ -77,8 +77,8 @@ const SignUp = () => {
         </div>
       </Title>
 
-      <div className="bg-set">
-        <div className="flex justify-center">
+
+        <div className="flex justify-center mb-5">
           <div className="mt-20 flex flex-col bg-white p-10 rounded-xl bg-clip-border text-gray-700 shadow-none">
             <div className="flex justify-center">
               <img src={signUp} alt="" />
@@ -184,7 +184,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 

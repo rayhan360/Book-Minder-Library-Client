@@ -30,7 +30,7 @@ const AllBook = () => {
       <div className="flex justify-end">
         <select 
         onChange={(e) => setFilterBook(e.target.value)}
-        className="select select-bordered w-full max-w-xs mr-5 mt-5">
+        className="select select-bordered w-full max-w-xs mr-5 mt-5 text-black">
           <option disabled selected>
            Filter
           </option>
@@ -41,7 +41,7 @@ const AllBook = () => {
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-3 max-w-[1500] mx-auto my-10">
         {filteredBooks.map((book) => (
           <div className="" key={book._id}>
-            <div className="card lg:card-side bg-base-100 shadow-xl h-80 lg:h-44">
+            <div className="card lg:card-side shadow-xl h-80 lg:h-44">
               <figure>
                 <img src={book.image} className="w-32" alt="Movie" />
               </figure>

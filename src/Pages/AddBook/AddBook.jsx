@@ -48,7 +48,7 @@ const AddBook = () => {
       </Title>
 
       {/* add book form */}
-      <div className="bg-gray-100 mb-5 max-w-7xl mx-auto p-5">
+      <div className=" mb-5 max-w-7xl mx-auto p-5">
         <section className="contact bg-contact-bg bg-cover bg-center bg-fixed my-10">
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -70,7 +70,7 @@ const AddBook = () => {
               <div className="w-full md:w-1/2 px-3">
                 <select
                   {...register("category", { required: true })}
-                  className="select select-bordered w-full max-w-xs bg-gray-100"
+                  className="select select-bordered w-full max-w-xs bg-gray-100 text-black"
                 >
                   <option value="Novel">Novel</option>
                   <option value="History">History</option>

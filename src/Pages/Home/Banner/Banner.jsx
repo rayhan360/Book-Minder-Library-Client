@@ -35,8 +35,8 @@ const Banner = () => {
                     </p>
                   </div>
                   <div className="mt-7">
-                    <button className="bg-[#f6425f] text-white px-5 py-2 rounded-md ml-3">About us</button>
-                    <button className="border text-white border-[#f6425f] px-5 py-2 rounded-md ml-2">NewsLatter Subs</button>
+                    <a href="#about"><button className="bg-[#f6425f] text-white px-5 py-2 rounded-md ml-3">About us</button></a>
+                    <a href="#newsLatter"><button className="border text-white border-[#f6425f] px-5 py-2 rounded-md ml-2">NewsLatter Subs</button></a>
                   </div>
                 </div>
               </div>
@@ -61,8 +61,8 @@ const Banner = () => {
                     </p>
                   </div>
                   <div className="mt-7">
-                    <button className="bg-[#f6425f] text-white px-5 py-2 rounded-md ml-3">About us</button>
-                    <button className="border text-white border-[#f6425f] px-5 py-2 rounded-md ml-2">NewsLatter Subs</button>
+                  <a href="#about"><button className="bg-[#f6425f] text-white px-5 py-2 rounded-md ml-3">About us</button></a>
+                  <a href="#newsLatter"><button className="border text-white border-[#f6425f] px-5 py-2 rounded-md ml-2">NewsLatter Subs</button></a>
                   </div>
                 </div>
               </div>
@@ -87,8 +87,8 @@ const Banner = () => {
                     </p>
                   </div>
                   <div className="mt-7">
-                    <button className="bg-[#f6425f] text-white px-5 py-2 rounded-md ml-3">About us</button>
-                    <button className="border text-white border-[#f6425f] px-5 py-2 rounded-md ml-2">NewsLatter Subs</button>
+                  <a href="#about"><button className="bg-[#f6425f] text-white px-5 py-2 rounded-md ml-3">About us</button></a>
+                    <a href="#newsLatter"><button className="border text-white border-[#f6425f] px-5 py-2 rounded-md ml-2">NewsLatter Subs</button></a>
                   </div>
                 </div>
               </div>

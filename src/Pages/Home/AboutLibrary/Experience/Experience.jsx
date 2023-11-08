@@ -2,22 +2,23 @@ import librarians from "../../../../assets/online/librarians.png";
 import active from "../../../../assets/online/active.png";
 import borrowed from "../../../../assets/online/borrowed.png";
 import total from "../../../../assets/online/total.png";
-
+import line from "../../../../assets/bg.png"
 const Experience = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto my-20">
-      <div className="space-y-8 lg:mt-20 bg">
+      <div className=" lg:mt-20">
         <h1 className="text-3xl font-medium text-center lg:mt-20">
           <span className="font-extrabold">22 Years</span> Services In Our
           Library
         </h1>
-        <p className="tex-sm">
+        <p className="tex-sm mt-8">
           Unlocking the World of Imagination for Over 22 Years, our Library
           Offers a Boundless Realm of Knowledge, Adventures, and Dreams. Join us
           on this Literary Odyssey and Explore the Wonders of Books, Audiobooks,
           Magazines, and Kid&apos;s Reads. We&apos;re Your Passport to Infinite
           Worlds.
         </p>
+        <img src={line} className="h-32 w-full" alt="" />
       </div>
       <div className="flex justify-center">
         <div className="flex gap-10">

@@ -38,7 +38,7 @@ const BorrowedBookCard = ({ borrow, setBorrowBook, borrowBook }) => {
 
   return (
     <div>
-      <div className="w-full bg-white border border-gray-200 rounded-lg shadow-xl my-5">
+      <div className="w-full rounded-lg shadow-xl my-5">
         <a href="#">
           <img
             className="w-48 h-48 mx-auto mb-4 object-cover"
@@ -48,7 +48,7 @@ const BorrowedBookCard = ({ borrow, setBorrowBook, borrowBook }) => {
         </a>
         <div className="px-5 pb-5">
           <div className="flex gap-1">
-            <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
+            <h5 className="text-xl font-semibold tracking-tight ">
               {bookName}
             </h5>
             <p className="badge badge-secondary text-black">{category}</p>

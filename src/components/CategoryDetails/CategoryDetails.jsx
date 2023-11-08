@@ -48,7 +48,7 @@ const CategoryDetails = () => {
       </Title>
 
       <div>
-        <div className="p-4 bg-white shadow-lg rounded-lg">
+        <div className="p-4  shadow-lg rounded-lg">
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-2/5 rounded-lg flex justify-center overflow-hidden">
               <img src={image} alt={name} className="w-80 object-cover" />
@@ -57,18 +57,18 @@ const CategoryDetails = () => {
             <div className="w-full md:w-3/5 pl-4">
               <h1 className="text-3xl font-bold mb-2">{name}</h1>
 
-              <p className="text-gray-600 mb-2">
+              <p className=" mb-2">
                 <span className="font-semibold">Author:</span> {author}
               </p>
-              <p className="text-gray-600 mb-2">
+              <p className=" mb-2">
                 <span className="font-semibold">Category:</span> {category}
               </p>
 
-              <p className="text-gray-800 mb-4">{description}</p>
+              <p className="mb-4">{description}</p>
 
               <div className="flex items-center mb-4">
                 <div className="flex-1">
-                  <p className="text-gray-600">
+                  <p className="">
                     <span className="font-semibold">Quantity:</span> {quantity}
                   </p>
                 </div>
@@ -110,7 +110,7 @@ const CategoryDetails = () => {
                   <div className="modal-box">
                     <form method="dialog">
                       {/* if there is a button in form, it will close the modal */}
-                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 z-10">
+                      <button className="btn btn-sm btn-circle btn-ghost text-black absolute right-2 top-2 z-10">
                         ✕
                       </button>
                     </form>

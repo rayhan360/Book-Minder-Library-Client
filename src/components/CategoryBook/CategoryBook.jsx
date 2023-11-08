@@ -48,7 +48,7 @@ const CategoryBook = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {filterBooksByCategory.map((book) => (
           <div key={book._id}>
-            <div className="bg-white shadow-lg rounded-lg p-4 m-4">
+            <div className=" shadow-lg rounded-lg p-4 m-4">
               <img
                 src={book.image}
                 alt={book.name}

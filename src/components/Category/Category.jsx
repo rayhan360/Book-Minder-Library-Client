@@ -11,7 +11,7 @@ const Category = () => {
   }
 
   return (
-    <div className="bg-gray-200 p-5">
+    <div className=" p-5">
       <div>
         <h1 className="text-3xl font-medium text-center my-3 border-b-2 pb-5">
           Popular Book Category Here
