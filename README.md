@@ -1,22 +1,48 @@
+# Book Minder Library || Library Management Platform
 
-# Website Name: Book Minder Library
-##  Website Link: 
-https://book-minder-library.web.app/
-# Website Features
+![Alt text](image-1.png)
 
-### User Role
+*Live Link:* [Book Minder Library Live](your-live-link)
 
-- Browse books: Users can browse the library's collection of books from the homepage or by category.
-- Subscribe to newsletter: Users can subscribe to the library's - newsletter to receive updates about new books and events.
-- View book details: Users can click on a book to view its details, including author, genre, and a brief description.
-- Preview book: Users can click on the "Read" button to preview a few pages of the book.
-- Borrow book: Users can click on the "Borrow" button to borrow a book.
-- Manage borrowed books: Users can view their borrowed books from the "Borrower Books" page and return them by clicking on the "Return" button.
-- Install mobile app: Users can install the library's mobile app from the link provided on the home page.
+## Project Overview
 
+Book Minder Library is a Full-Stack project developed within a tight timeframe of 4 days. This platform serves as a comprehensive Library Management System, offering features for both users and administrators.
 
-### Librarian Role
+### Features
 
-- Add new books: Librarians can add new books to the library's collection by providing information such as title, author, genre, and description.
-- Update book information: Librarians can update existing book information, such as adding new editions or changing availability.
+#### For Users:
+- **Newsletter Subscription:** Stay updated by subscribing to the library's newsletter.
+- **Book Preview:** Preview book content with the "Read" button.
+- **Borrow Books:** Borrow books seamlessly with the "Borrow" button.
+- **Manage Borrowed Books:** Keep track of borrowed books on the "Borrower Books" page.
+- **Mobile App Installation:** Easily install the library's mobile app from the homepage link.
 
+#### For Admins:
+- **Add New Books:** Include new books with details such as title, author, genre, and description.
+- **Update Book Information:** Modify book details, including editions and availability.
+
+### Usage Technology
+
+#### Front-End:
+- **React.js:** Building dynamic and responsive user interfaces.
+- **Tailwind CSS & DaisyUI:** Crafting visually appealing and highly customizable designs.
+- **React Hook Form:** Seamless form handling for an improved user experience.
+- **Swipper.js:** Providing a delightful image-swiping experience.
+
+#### Back-End:
+- **Express.js:** Facilitating robust server-side development.
+- **MongoDB:** Utilizing a NoSQL database for efficient data management.
+- **JWT:** Implementing secure authentication.
+- **Tanstack Query & Axios:** Optimizing data fetching and manipulation.
+
+#### Authentication:
+- **Firebase:** Integrating Firebase for secure user authentication.
+
+### Installation
+
+1. Clone the client repository:
+   ```bash
+   git clone https://github.com/rayhan360/Book-Minder-Library-Client.git
+   Install client dependencies:
+   cd book-minder-library-client
+   npm install
