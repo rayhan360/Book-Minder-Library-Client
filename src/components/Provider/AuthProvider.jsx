@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
 import auth from "../../config/firebase.config";
-import axios from "axios";
 
 import {
   GoogleAuthProvider,
@@ -59,32 +58,13 @@ const AuthProvider = ({ children }) => {
 
   // observe account
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      const userEmail = currentUser?.email || user?.email;
-      const loggedInUser = { email: userEmail };
-      setUser(currentUser);
-      setLoading(false);
-      // if user exist then issue a token
-      if (currentUser) {
-        axios
-          .post("https://book-minder-library-server.vercel.app/api/v1/jwt", loggedInUser, {
-            withCredentials: true,
-          })
-          .then((res) => {
-            console.log("token response authprovider", res.data);
-          });
-      } else {
-        axios
-          .post("https://book-minder-library-server.vercel.app/api/v1/logout", loggedInUser, {
-            withCredentials: true,
-          })
-          .then((res) => {
-            console.log("logout response data", res.data);
-          });
-      }
-    });
-    return () => unSubscribe();
-  }, [user?.email]);
+    const unSubscribe = onAuthStateChanged(auth, currentUser => {
+        setUser(currentUser)
+        setLoading(false)
+    })
+    return () => unSubscribe()
+}, [])
+
   const authInfo = {
     user,
     loading,

@@ -17,7 +17,7 @@ const AddBook = () => {
     // console.log(data);
 
     // send data to server
-    axios.post("https://book-minder-library-server.vercel.app/api/v1/books", data, {withCredentials: true})
+    axios.post("https://book-minder-library-server.vercel.app/api/v1/books", data)
     .then((res) => {
       if (res.data.insertedId) {
         Swal.fire({

@@ -14,7 +14,7 @@ const BorrowBook = () => {
   const url = `https://book-minder-library-server.vercel.app/api/v1/borrow-book?email=${user?.email}`;
 
   useEffect(() => {
-    axios.get(url, { withCredentials: true }).then((res) => {
+    axios.get(url).then((res) => {
       setBorrowBook(res.data);
     });
   }, [url]);

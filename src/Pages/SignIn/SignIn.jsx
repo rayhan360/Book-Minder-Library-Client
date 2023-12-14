@@ -6,15 +6,11 @@ import signin from "../../assets/auth/login.gif";
 import SocialAuth from "../../components/Shared/SocialAuth";
 import useAuth from "../../hooks/useAuth/useAuth";
 import toast from "react-hot-toast";
-import { useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
 import { Helmet } from "react-helmet";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState();
   const { login } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -24,17 +20,6 @@ const SignIn = () => {
     login(email, password)
       .then((result) => {
         console.log(result.user);
-        const tokenUser = { email };
-        // get access toke
-        axios
-          .post("https://book-minder-library-server.vercel.app/api/v1/jwt", tokenUser, {
-            withCredentials: true,
-          })
-          .then((res) => {
-            if (res.data.success) {
-              navigate(location?.state ? location?.state : "/");
-            }
-          });
         toast.success("User Login Successful");
         e.target.reset();
       })
